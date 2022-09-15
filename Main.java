@@ -1,4 +1,3 @@
-
 /****************************
  * This class will run the
  * window and options
@@ -147,6 +146,6 @@ public class Main {
     }
 
     private static void reset() {
-        System.out.println("Reseting Game");
+        Game.reset();
     }
 }
