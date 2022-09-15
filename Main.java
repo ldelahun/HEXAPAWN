@@ -146,6 +146,6 @@ public class Main {
     }
 
     private static void reset() {
-        Game.reset();
+        ((Game) board).reset();
     }
 }

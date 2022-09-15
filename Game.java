@@ -3,37 +3,86 @@ import javax.swing.JPanel;
 
 import java.awt.Graphics;
 import java.awt.Dimension;
+import java.awt.event.MouseListener;
 
-public class Game extends JPanel {
+public class Game extends JPanel implements MouseListener{
     // Objects
-    static Pawn pPawnA, pPawnB, pPawnC, bPawn1, bPawn2, bPawn3;
+    static Pawn pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
+    static BoardLocations location = new BoardLocations();
+
+    // Game data
+    static int wins,loss,round;
+    boolean playerChose;
 
     Game() {
         // Panel Settings
         final Dimension boardSize = new Dimension(900, 900);
 
         // Setting up game
+        playerChose = false;
+        round = 1;
+        createPawns();
         pawnStart();
 
         // Applying Settings
         this.setPreferredSize(boardSize);
-        // this.setBackground(Color.BLACK);
+        this.addMouseListener(this);
+        
+        // Painting board
         repaint();
     }
 
-    // pawn placement functions
-    public static void reset() {
+    public void reset() {// Resets everything
         System.out.println("Reseting Game");
+        // Reseting Variables
+        wins = 0;
+        loss = 0;
+        playerChose = false;
         pawnStart();
+        repaint();
     }
 
     public static void pawnStart() {// Sets pawns to start positions
-        pPawnA = new Pawn(0, "seven");
-        pPawnB = new Pawn(1, "eight");
-        pPawnC = new Pawn(2, "nine");
-        bPawn1 = new Pawn(3, "one");
-        bPawn2 = new Pawn(3, "two");
-        bPawn3 = new Pawn(3, "three");
+        pawnA.l="seven";
+        pawnB.l="eight";
+        pawnC.l="nine";
+        pawn1.l="one";
+        pawn2.l="two";
+        pawn3.l="three";
+    }
+
+    private void createPawns() {// Creates all the pawns
+        pawnA = new Pawn(0);
+        pawnB = new Pawn(1);
+        pawnC = new Pawn(2);
+        pawn1 = new Pawn(3);
+        pawn2 = new Pawn(3);
+        pawn3 = new Pawn(3);
+    }
+    
+    // Player Things
+    private void characterSelection(String b){
+        if(pawnA.l.equals(b)) {
+            pawnSelected(pawnA);
+        }else if(pawnB.l.equals(b)){
+            pawnSelected(pawnB);
+        }else if(pawnC.l.equals(b)){
+            pawnSelected(pawnC);
+        }
+    }
+    private void pawnSelected(Pawn p){
+        p.t = 4;// Sets pawn select icon
+        playerSelectionPawn = p;
+        playerChose = true;
+        //Updates Board
+        repaint();
+    }
+    private void locationSelect(Pawn p, String b){
+        p.t = p.dt;// Sets it back to defualt type
+        p.l = b;
+
+        playerChose = false; //Temp
+        repaint();
     }
 
     // Drawing Board
@@ -45,11 +94,30 @@ public class Game extends JPanel {
     // Drawing Elements to the panel
     public void paint(Graphics g) {
         drawBackground(g);
-        pPawnA.draw(g);
-        pPawnB.draw(g);
-        pPawnC.draw(g);
-        bPawn1.draw(g);
-        bPawn2.draw(g);
-        bPawn3.draw(g);
+        pawnA.draw(g);
+        pawnB.draw(g);
+        pawnC.draw(g);
+        pawn1.draw(g);
+        pawn2.draw(g);
+        pawn3.draw(g);
     }
+
+    // Mouse Events
+    @Override
+    public void mouseClicked(java.awt.event.MouseEvent e) {
+        if(!playerChose){
+            characterSelection(location.checkxCords(e.getX(), e.getY()));
+        }else {
+            locationSelect(playerSelectionPawn, location.checkxCords(e.getX(), e.getY()));
+        }
+    }
+    //Shit is down here
+    @Override
+    public void mousePressed(java.awt.event.MouseEvent e) {}
+    @Override
+    public void mouseReleased(java.awt.event.MouseEvent e) {}
+    @Override
+    public void mouseEntered(java.awt.event.MouseEvent e) {}
+    @Override
+    public void mouseExited(java.awt.event.MouseEvent e) {}
 }
