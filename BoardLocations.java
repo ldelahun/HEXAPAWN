@@ -1,3 +1,4 @@
+
 public class BoardLocations {
     int x, y;
 
@@ -43,7 +44,7 @@ public class BoardLocations {
         }
     }
 
-    public String checkxCords(int x, int y) {
+    public String checkCords(int x, int y) {
         String n = "";
 
         // Giant if else chain because god is dead.
@@ -75,5 +76,23 @@ public class BoardLocations {
         
         // Returning the code name
         return n;
+    }
+
+    // Check if it is placeable
+    public String[] moveOptions(int r, int t) {
+        String[] moves = {};
+        
+        if(t == 0){
+            switch (r) {
+                case 1:
+                    System.out.println("WORK");
+                    moves[0] = "four";
+                    break;
+            }
+        }
+
+        System.out.println("ASS"
+        );
+        return moves;
     }
 }

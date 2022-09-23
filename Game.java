@@ -19,8 +19,7 @@ public class Game extends JPanel implements MouseListener{
         final Dimension boardSize = new Dimension(900, 900);
 
         // Setting up game
-        playerChose = false;
-        round = 1;
+        startUpVariables();
         createPawns();
         pawnStart();
 
@@ -34,10 +33,7 @@ public class Game extends JPanel implements MouseListener{
 
     public void reset() {// Resets everything
         System.out.println("Reseting Game");
-        // Reseting Variables
-        wins = 0;
-        loss = 0;
-        playerChose = false;
+        startUpVariables();
         pawnStart();
         repaint();
     }
@@ -78,11 +74,32 @@ public class Game extends JPanel implements MouseListener{
         repaint();
     }
     private void locationSelect(Pawn p, String b){
-        p.t = p.dt;// Sets it back to defualt type
-        p.l = b;
+        String[] moves = location.moveOptions(round, p.dt);
 
-        playerChose = false; //Temp
+        for (String s : moves) {
+            if(b.equals(s)){
+                System.out.println("FUCK YEAH");
+            }
+        }
+ 
+
+        if (true){
+            p.t = p.dt;// Sets it back to defualt type
+            p.l = b;
+            playerChose = false; //Temp 
+        }else {
+            p.t = p.dt;
+            playerChose = false;
+        }
         repaint();
+    }
+
+    // RESET Methods
+    private void startUpVariables() {
+        round = 1;
+        wins = 0;
+        loss = 0;
+        playerChose = false;
     }
 
     // Drawing Board
@@ -106,9 +123,9 @@ public class Game extends JPanel implements MouseListener{
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
         if(!playerChose){
-            characterSelection(location.checkxCords(e.getX(), e.getY()));
+            characterSelection(location.checkCords(e.getX(), e.getY()));
         }else {
-            locationSelect(playerSelectionPawn, location.checkxCords(e.getX(), e.getY()));
+            locationSelect(playerSelectionPawn, location.checkCords(e.getX(), e.getY()));
         }
     }
     //Shit is down here
