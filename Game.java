@@ -76,21 +76,7 @@ public class Game extends JPanel implements MouseListener{
     private void locationSelect(Pawn p, String b){
         String[] moves = location.moveOptions(round, p.dt);
 
-        for (String s : moves) {
-            if(b.equals(s)){
-                System.out.println("FUCK YEAH");
-            }
-        }
- 
-
-        if (true){
-            p.t = p.dt;// Sets it back to defualt type
-            p.l = b;
-            playerChose = false; //Temp 
-        }else {
-            p.t = p.dt;
-            playerChose = false;
-        }
+        
         repaint();
     }
 

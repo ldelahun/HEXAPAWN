@@ -49,50 +49,49 @@ public class BoardLocations {
 
         // Giant if else chain because god is dead.
         if (y > 300 && y <= 600) {
-            if(x >= 0 && x < 300){
+            if (x >= 0 && x < 300) {
                 n = "four";
-            }else if(x >= 300 && x < 600){
+            } else if (x >= 300 && x < 600) {
                 n = "five";
-            }else {
+            } else {
                 n = "six";
             }
-        }else if (y > 600 && y <= 900) {
-            if(x >= 0 && x < 300){
+        } else if (y > 600 && y <= 900) {
+            if (x >= 0 && x < 300) {
                 n = "seven";
-            }else if(x >= 300 && x < 600){
+            } else if (x >= 300 && x < 600) {
                 n = "eight";
-            }else {
+            } else {
                 n = "nine";
             }
-        }else {
-            if(x >= 0 && x < 300){
+        } else {
+            if (x >= 0 && x < 300) {
                 n = "one";
-            }else if(x >= 300 && x < 600){
+            } else if (x >= 300 && x < 600) {
                 n = "two";
-            }else {
+            } else {
                 n = "three";
             }
         }
-        
+
         // Returning the code name
         return n;
     }
 
     // Check if it is placeable
     public String[] moveOptions(int r, int t) {
-        String[] moves = {};
-        
-        if(t == 0){
+        String opt1 = "";
+        String opt2 = "";
+        String opt3 = "";
+
+        if (t == 0) {
             switch (r) {
                 case 1:
-                    System.out.println("WORK");
-                    moves[0] = "four";
+                    opt1 = "four";
                     break;
             }
         }
-
-        System.out.println("ASS"
-        );
-        return moves;
+        
+        return new String[] {opt1,opt2,opt3};
     }
 }

@@ -2,6 +2,8 @@
  * This will run the pawn 
  * icons. All it needs is
  * its type and location
+ * Also it will run the
+ * avaliable options
 ****************************/
 
 import java.awt.Graphics;
@@ -39,6 +41,24 @@ public class Pawn {
             ImageIcon icon = new ImageIcon(pawnIcon[t]);
             g.drawImage(icon.getImage(), board.x, board.y, null);
             saveLocation();
+        }
+    }
+}
+
+class SelectedBox {
+    // Variables
+    String l;
+    boolean toDraw = false;
+
+    // Objects
+    ImageIcon icon = new ImageIcon("Imgs/WindowStuff/allowedBox.png");
+    BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
+
+    public void draw(Graphics g) {
+        board.boardValues(l);// Getting x and y locations
+
+        if(toDraw){
+            g.drawImage(icon.getImage(), board.x, board.y, null);
         }
     }
 }
