@@ -47,7 +47,7 @@ public class Pawn {
 
 class SelectedBox {
     // Variables
-    String l;
+    String l = "ten";
     boolean toDraw = false;
 
     // Objects

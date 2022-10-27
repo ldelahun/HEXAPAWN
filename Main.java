@@ -141,7 +141,7 @@ public class Main {
     }
 
     private static void displayWins() {
-        String text = "N/A";
+        String text = Integer.toString(Game.round);
         JOptionPane.showMessageDialog(null, text, "Player Wins", JOptionPane.PLAIN_MESSAGE);
     }
 

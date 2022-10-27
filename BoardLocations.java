@@ -41,6 +41,9 @@ public class BoardLocations {
                 x = 600;
                 y = 600;
                 break;
+            default:
+                x = -300;
+                y = -300;
         }
     }
 
@@ -80,18 +83,36 @@ public class BoardLocations {
 
     // Check if it is placeable
     public String[] moveOptions(int r, int t) {
-        String opt1 = "";
-        String opt2 = "";
-        String opt3 = "";
+        String opt1 = "ten";
+        String opt2 = "ten";
+        String opt3 = "ten";
 
         if (t == 0) {
             switch (r) {
                 case 1:
                     opt1 = "four";
+                    opt2 = "ten";
+                    opt3 = "ten";
+                    break;
+            }
+        } else if (t == 1) {
+            switch (r) {
+                case 1:
+                    opt1 = "five";
+                    opt2 = "ten";
+                    opt3 = "ten";
+                    break;
+            }
+        } else if (t == 2) {
+            switch (r) {
+                case 1:
+                    opt1 = "six";
+                    opt2 = "ten";
+                    opt3 = "ten";
                     break;
             }
         }
-        
-        return new String[] {opt1,opt2,opt3};
+
+        return new String[] { opt1, opt2, opt3 };
     }
 }
