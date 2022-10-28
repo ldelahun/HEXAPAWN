@@ -1,47 +1,38 @@
+/*
+ * Shooping Doopy 
+*/
 package src;
-/****************************
- * This will run the pawn 
- * icons. All it needs is
- * its type and location
- * Also it will run the
- * avaliable options
-****************************/
 
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
-public class Pawn {
-    //Pawn Data
-    int x,y;
-    int t,dt; // Type of Pawn
-    String l; // Location of Pawn
-    boolean isSelected;
+/** 
+ * This class will hold the pawn objects that can be manipulate the board
+*/
+public class Pawns {
+    int type;
+    int defaultType;
+    int boardLocation; // Location of Pawn
     boolean isActive = true;
-    String[] pawnIcon = {"Imgs/Pawns/Player/PawnA.png","Imgs/Pawns/Player/PawnB.png","Imgs/Pawns/Player/PawnC.png","Imgs/Pawns/Bot/PawnBot.png","Imgs/Pawns/Special/PawnSpecial.png"};//All known pawn icons
+    String[] pawnIcons = {"Imgs/Pawns/Player/PawnA.png","Imgs/Pawns/Player/PawnB.png","Imgs/Pawns/Player/PawnC.png","Imgs/Pawns/Bot/PawnBot.png","Imgs/Pawns/Special/PawnSpecial.png"};//All known pawn icons
 
     // objs
     BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
 
-    Pawn(int type){
+    Pawn(int t){
         //Applying Data
-        t = type;
-        dt = type;
-    }
-
-    private void saveLocation(){
-        x = board.x;
-        y = board.y;
+        type = t;
+        defaultType = t;
     }
 
     public void draw(Graphics g) {
         // Calling method
-        board.boardValues(l);
+        board.boardValues(boardLocation);
 
         if(isActive){
-            ImageIcon icon = new ImageIcon(pawnIcon[t]);
+            ImageIcon icon = new ImageIcon(pawnIcons[t]);
             g.drawImage(icon.getImage(), board.x, board.y, null);
-            saveLocation();
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Game extends JPanel implements MouseListener {
     // Objects
-    static Pawn pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
+    static Pawns pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
     static BoardLocations location = new BoardLocations();
     static SelectedBox box1, box2, box3;
     static CoolShit ult = new CoolShit();
@@ -43,7 +43,7 @@ public class Game extends JPanel implements MouseListener {
     }
 
     public static void pawnStart() {// Sets pawns to start positions
-        pawnA.l = "seven";
+        pawnA.boardLocation = "seven";
         pawnB.l = "eight";
         pawnC.l = "nine";
         pawn1.l = "one";
