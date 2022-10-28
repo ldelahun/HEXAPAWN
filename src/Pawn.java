@@ -1,3 +1,4 @@
+package src;
 /****************************
  * This will run the pawn 
  * icons. All it needs is

@@ -1,3 +1,4 @@
+package src;
 public class CoolShit {
     public boolean arrayStringChecker(String[] a, String v) {
         boolean isThere = false;

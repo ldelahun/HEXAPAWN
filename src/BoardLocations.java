@@ -1,3 +1,4 @@
+package src;
 
 public class BoardLocations {
     int x, y;
