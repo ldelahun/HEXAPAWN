@@ -52,12 +52,12 @@ public class Game extends JPanel implements MouseListener {
     }
 
     private void createPawns() {// Creates all the pawns
-        pawnA = new Pawn(0);
-        pawnB = new Pawn(1);
-        pawnC = new Pawn(2);
-        pawn1 = new Pawn(3);
-        pawn2 = new Pawn(3);
-        pawn3 = new Pawn(3);
+        pawnA = new Pawns(0);
+        pawnB = new Pawns(1);
+        pawnC = new Pawns(2);
+        pawn1 = new Pawns(3);
+        pawn2 = new Pawns(3);
+        pawn3 = new Pawns(3);
 
         box1 = new SelectedBox();
         box2 = new SelectedBox();

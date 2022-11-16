@@ -4,41 +4,41 @@ public class BoardLocations {
     int x, y;
 
     // Location data base
-    public void boardValues(String n) {// Input Code Name
-        switch (n) {
-            case "one":
+    public void boardValues(int boardCode) {// Input Code Name
+        switch (boardCode) {
+            case 1:
                 x = 0;
                 y = 0;
                 break;
-            case "two":
+            case 2:
                 x = 300;
                 y = 0;
                 break;
-            case "three":
+            case 3:
                 x = 600;
                 y = 0;
                 break;
-            case "four":
+            case 4:
                 x = 0;
                 y = 300;
                 break;
-            case "five":
+            case 5:
                 x = 300;
                 y = 300;
                 break;
-            case "six":
+            case 6:
                 x = 600;
                 y = 300;
                 break;
-            case "seven":
+            case 7:
                 x = 0;
                 y = 600;
                 break;
-            case "eight":
+            case 8:
                 x = 300;
                 y = 600;
                 break;
-            case "nine":
+            case 9:
                 x = 600;
                 y = 600;
                 break;

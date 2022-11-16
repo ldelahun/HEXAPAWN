@@ -20,7 +20,7 @@ public class Pawns {
     // objs
     BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
 
-    Pawn(int t){
+    void Pawn(int t){
         //Applying Data
         type = t;
         defaultType = t;
@@ -31,7 +31,7 @@ public class Pawns {
         board.boardValues(boardLocation);
 
         if(isActive){
-            ImageIcon icon = new ImageIcon(pawnIcons[t]);
+            ImageIcon icon = new ImageIcon(pawnIcons[type]);
             g.drawImage(icon.getImage(), board.x, board.y, null);
         }
     }
@@ -39,7 +39,7 @@ public class Pawns {
 
 class SelectedBox {
     // Variables
-    String l = "ten";
+    int location = 0;
     boolean toDraw = false;
 
     // Objects
@@ -47,7 +47,7 @@ class SelectedBox {
     BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
 
     public void draw(Graphics g) {
-        board.boardValues(l);// Getting x and y locations
+        board.boardValues(location);// Getting x and y locations
 
         if(toDraw){
             g.drawImage(icon.getImage(), board.x, board.y, null);
