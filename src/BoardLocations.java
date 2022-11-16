@@ -48,13 +48,13 @@ public class BoardLocations {
         }
     }
 
-    public String checkCords(int x, int y) {
-        String n = "";
+    public int checkCords(int x, int y) {
+        int boardCode = 0;
 
         // Giant if else chain because god is dead.
         if (y > 300 && y <= 600) {
             if (x >= 0 && x < 300) {
-                n = "four";
+                boardCode = 4;
             } else if (x >= 300 && x < 600) {
                 n = "five";
             } else {
@@ -79,7 +79,7 @@ public class BoardLocations {
         }
 
         // Returning the code name
-        return n;
+        return boardCode;
     }
 
     // Check if it is placeable

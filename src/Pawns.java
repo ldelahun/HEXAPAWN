@@ -20,10 +20,10 @@ public class Pawns {
     // objs
     BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
 
-    void Pawn(int t){
+    Pawns(int pawnType){
         //Applying Data
-        type = t;
-        defaultType = t;
+        type = pawnType;
+        defaultType = pawnType;
     }
 
     public void draw(Graphics g) {

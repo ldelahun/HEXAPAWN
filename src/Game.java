@@ -1,4 +1,5 @@
 package src;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -43,12 +44,12 @@ public class Game extends JPanel implements MouseListener {
     }
 
     public static void pawnStart() {// Sets pawns to start positions
-        pawnA.boardLocation = "seven";
-        pawnB.l = "eight";
-        pawnC.l = "nine";
-        pawn1.l = "one";
-        pawn2.l = "two";
-        pawn3.l = "three";
+        pawnA.boardLocation = 7;
+        pawnB.boardLocation = 8;
+        pawnC.boardLocation = 9;
+        pawn1.boardLocation = 1;
+        pawn2.boardLocation = 2;
+        pawn3.boardLocation = 3;
     }
 
     private void createPawns() {// Creates all the pawns
@@ -65,10 +66,10 @@ public class Game extends JPanel implements MouseListener {
     }
 
     // Player Things
-    private void characterSelection(String b) {
-        if (pawnA.l.equals(b)) {
+    private void characterSelection(int box) {
+        if (pawnA.boardLocation == box) {
             pawnSelected(pawnA);
-        } else if (pawnB.l.equals(b)) {
+        } else if (pawnB.l.equal) {
             pawnSelected(pawnB);
         } else if (pawnC.l.equals(b)) {
             pawnSelected(pawnC);
@@ -76,13 +77,13 @@ public class Game extends JPanel implements MouseListener {
 
     }
 
-    private void pawnSelected(Pawn p) {
-        p.t = 4;// Sets pawn select icon
-        playerSelectionPawn = p;
+    private void pawnSelected(Pawns pawn) {
+        pawn.type = 4;// Sets pawn select icon
+        playerSelectionPawn = pawn;
         playerChose = true;
 
         // Shows boxes
-        String[] moves = location.moveOptions(round, p.dt);
+        String[] moves = location.moveOptions(round, pawn.defaultType);
         System.out.println(Arrays.toString(moves));
         box1.l = moves[0];
         box1.toDraw = true;
