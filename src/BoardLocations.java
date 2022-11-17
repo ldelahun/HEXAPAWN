@@ -56,25 +56,25 @@ public class BoardLocations {
             if (x >= 0 && x < 300) {
                 boardCode = 4;
             } else if (x >= 300 && x < 600) {
-                n = "five";
+                boardCode = 5;
             } else {
-                n = "six";
+                boardCode = 6;
             }
         } else if (y > 600 && y <= 900) {
             if (x >= 0 && x < 300) {
-                n = "seven";
+                boardCode = 7;
             } else if (x >= 300 && x < 600) {
-                n = "eight";
+                boardCode = 8;
             } else {
-                n = "nine";
+                boardCode = 9;
             }
         } else {
             if (x >= 0 && x < 300) {
-                n = "one";
+                boardCode = 1;
             } else if (x >= 300 && x < 600) {
-                n = "two";
+                boardCode = 2;
             } else {
-                n = "three";
+                boardCode = 3;
             }
         }
 
@@ -83,37 +83,28 @@ public class BoardLocations {
     }
 
     // Check if it is placeable
-    public String[] moveOptions(int r, int t) {
-        String opt1 = "ten";
-        String opt2 = "ten";
-        String opt3 = "ten";
+    public int moveOptions(int round, int pawn, int box) {
+        int boxPosition = 10;
+        int[][][] possiblePositions = {
+            {
+                {4,10,10},
+            },
+            {
+                {5,10,10},
+            },
+            {
+                {6,10,10},
+            }
+        };
 
-        if (t == 0) {
-            switch (r) {
-                case 1:
-                    opt1 = "four";
-                    opt2 = "ten";
-                    opt3 = "ten";
-                    break;
-            }
-        } else if (t == 1) {
-            switch (r) {
-                case 1:
-                    opt1 = "five";
-                    opt2 = "ten";
-                    opt3 = "ten";
-                    break;
-            }
-        } else if (t == 2) {
-            switch (r) {
-                case 1:
-                    opt1 = "six";
-                    opt2 = "ten";
-                    opt3 = "ten";
-                    break;
-            }
+        round--; // This is to set it up for an array
+
+        try {
+            boxPosition = possiblePositions[pawn][round][box];
+        } catch (Exception e) {
+            System.out.println("error array is dogshit - "+e);
         }
 
-        return new String[] { opt1, opt2, opt3 };
+        return boxPosition;
     }
 }

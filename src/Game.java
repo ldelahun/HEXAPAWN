@@ -6,14 +6,12 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.event.MouseListener;
-import java.util.Arrays;
 
 public class Game extends JPanel implements MouseListener {
     // Objects
     static Pawns pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
     static BoardLocations location = new BoardLocations();
     static SelectedBox box1, box2, box3;
-    static CoolShit ult = new CoolShit();
 
     // Game data
     static int wins, loss, round;
@@ -69,9 +67,9 @@ public class Game extends JPanel implements MouseListener {
     private void characterSelection(int box) {
         if (pawnA.boardLocation == box) {
             pawnSelected(pawnA);
-        } else if (pawnB.l.equal) {
+        } else if (pawnB.boardLocation == box) {
             pawnSelected(pawnB);
-        } else if (pawnC.l.equals(b)) {
+        } else if (pawnC.boardLocation == box) {
             pawnSelected(pawnC);
         }
 
@@ -83,32 +81,28 @@ public class Game extends JPanel implements MouseListener {
         playerChose = true;
 
         // Shows boxes
-        String[] moves = location.moveOptions(round, pawn.defaultType);
-        System.out.println(Arrays.toString(moves));
-        box1.l = moves[0];
+        box1.location = location.moveOptions(round, pawn.defaultType, 0);
         box1.toDraw = true;
 
-        box2.l = moves[1];
+        box2.location = location.moveOptions(round, pawn.defaultType, 1);
         box2.toDraw = true;
 
-        box3.l = moves[2];
+        box3.location = location.moveOptions(round, pawn.defaultType, 2);
         box3.toDraw = true;
 
         // Updates Board
         repaint();
     }
 
-    private void locationChecker(Pawn p, String b) {
-        String[] moves = location.moveOptions(round, p.dt);
-        System.out.println(Arrays.toString(moves));
+    private void locationChecker(Pawns pawn, int pawnPosition) {
 
-        if (ult.arrayStringChecker(moves, b)) {
+        if (location.moveOptions(round, pawn.defaultType, 0) == pawnPosition || location.moveOptions(round, pawn.defaultType, 1) == pawnPosition || location.moveOptions(round, pawn.defaultType, 2) == pawnPosition ) {
             box1.toDraw = false;
             box2.toDraw = false;
             box3.toDraw = false;
 
-            p.l = b;
-            p.t = p.dt;
+            pawn.boardLocation = pawnPosition;
+            pawn.type = pawn.defaultType;
             round++;
             playerChose = false; // Resets Player stuff
         }
@@ -149,11 +143,11 @@ public class Game extends JPanel implements MouseListener {
 
     // Mouse Events
     @Override
-    public void mouseClicked(java.awt.event.MouseEvent e) {
+    public void mouseClicked(java.awt.event.MouseEvent mouse) {
         if (!playerChose) {
-            characterSelection(location.checkCords(e.getX(), e.getY()));
+            characterSelection(location.checkCords(mouse.getX(), mouse.getY()));
         } else {
-            locationChecker(playerSelectionPawn, location.checkCords(e.getX(), e.getY()));
+            locationChecker(playerSelectionPawn, location.checkCords(mouse.getX(), mouse.getY()));
         }
     }
 
