@@ -14,7 +14,7 @@ public class Game extends JPanel implements MouseListener {
     static SelectedBox box1, box2, box3;
 
     // Game data
-    static int wins, loss, round;
+    static int wins, loss, round, gameState;
     boolean playerChose;
 
     Game() {
@@ -81,13 +81,13 @@ public class Game extends JPanel implements MouseListener {
         playerChose = true;
 
         // Shows boxes
-        box1.location = location.moveOptions(round, pawn.defaultType, 0);
+        box1.location = location.moveOptions(round, pawn.defaultType, 0, gameState);
         box1.toDraw = true;
 
-        box2.location = location.moveOptions(round, pawn.defaultType, 1);
+        box2.location = location.moveOptions(round, pawn.defaultType, 1, gameState);
         box2.toDraw = true;
 
-        box3.location = location.moveOptions(round, pawn.defaultType, 2);
+        box3.location = location.moveOptions(round, pawn.defaultType, 2, gameState);
         box3.toDraw = true;
 
         // Updates Board
@@ -96,7 +96,7 @@ public class Game extends JPanel implements MouseListener {
 
     private void locationChecker(Pawns pawn, int pawnPosition) {
 
-        if (location.moveOptions(round, pawn.defaultType, 0) == pawnPosition || location.moveOptions(round, pawn.defaultType, 1) == pawnPosition || location.moveOptions(round, pawn.defaultType, 2) == pawnPosition ) {
+        if (location.moveOptions(round, pawn.defaultType, 0, gameState) == pawnPosition || location.moveOptions(round, pawn.defaultType, 1, gameState) == pawnPosition || location.moveOptions(round, pawn.defaultType, 2, gameState) == pawnPosition ) {
             box1.toDraw = false;
             box2.toDraw = false;
             box3.toDraw = false;
@@ -115,6 +115,7 @@ public class Game extends JPanel implements MouseListener {
         round = 1;
         wins = 0;
         loss = 0;
+        gameState = 0;
         playerChose = false;
     }
 

@@ -83,10 +83,41 @@ public class BoardLocations {
     }
 
     // Check if it is placeable
-    public int moveOptions(int round, int pawn, int box) {
+    public int moveOptions(int round, int pawn, int box, int boardState) {
         int boxPosition = 10;
-        int[][][] possiblePositions = {
+        int[][][][] possiblePositions = {
             {
+                {
+                    {4,10,10}
+                }
+            },
+            {
+                {
+                    {5,10,10}
+                }
+            },
+            {
+                {
+                    {6,10,10}
+                }
+            }
+        };
+
+        round--; // This is to set it up for an array
+
+        try {
+            boxPosition = possiblePositions[pawn][round][boardState][box];
+        } catch (Exception e) {
+            System.out.println("error array is dogshit - "+e);
+        }
+
+        return boxPosition;
+    }
+}
+
+
+/*
+ * {
                 {4,10,10},
             },
             {
@@ -95,16 +126,4 @@ public class BoardLocations {
             {
                 {6,10,10},
             }
-        };
-
-        round--; // This is to set it up for an array
-
-        try {
-            boxPosition = possiblePositions[pawn][round][box];
-        } catch (Exception e) {
-            System.out.println("error array is dogshit - "+e);
-        }
-
-        return boxPosition;
-    }
-}
+ */
