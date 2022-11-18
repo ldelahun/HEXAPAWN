@@ -123,11 +123,16 @@ public class BoardLocations {
         return boxPosition;
     }
 
-    public int stateChecker(){
+    public int stateChecker(int round, int aLocation, int bLocation, int cLocation, int oneLocation, int twoLocation, int threeLocation){
+        int gameState = -1;
+        
+        try {
+            
+        } catch (Exception e) {
+            System.out.println("GOD HAS DIED");
+        }
         
         
-        
-        
-        return 0;
+        return gameState;
     }
 }
