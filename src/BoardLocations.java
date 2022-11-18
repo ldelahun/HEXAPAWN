@@ -126,10 +126,28 @@ public class BoardLocations {
     public int stateChecker(int round, int aLocation, int bLocation, int cLocation, int oneLocation, int twoLocation, int threeLocation){
         int gameState = -1;
         
-        try {
+        if (round == 1) {
+            if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+                gameState = 0;
+            }
+        }else if (round == 2) {
+            if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+                gameState = 0;
+            }else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+                gameState = 1;
+            }else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+                gameState = 2;
+            }
+        }else if (round == 3) {
+
+        }else if (round == 4) {
+
+        }else if(round == 5){
             
-        } catch (Exception e) {
-            System.out.println("GOD HAS DIED");
+        }else if(round == 6){
+
+        }else if(round == 7){
+
         }
         
         

@@ -16,6 +16,16 @@ public class BotBrain {
      * This will activate the brain of the bot
      */
     public void setPlan(int round, int gameState) {
-        locations[1] = 5;
+        switch (gameState) {
+            case 0:
+                locations[2] = 6;
+                break;
+            case 1:
+                locations[0] = 4;
+                break;
+            case 2:
+                locations[1] = 5;
+                break;
+        }
     }
 }

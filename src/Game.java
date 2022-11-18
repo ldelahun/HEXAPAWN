@@ -77,6 +77,7 @@ public class Game extends JPanel implements MouseListener {
     }
 
     private void pawnSelected(Pawns pawn) {
+        gameState = location.stateChecker(round,pawnA.boardLocation,pawnB.boardLocation,pawnC.boardLocation,pawn1.boardLocation,pawn2.boardLocation,pawn3.boardLocation);
         pawn.type = 4;// Sets pawn select icon
         playerSelectionPawn = pawn;
         playerChose = true;
@@ -115,6 +116,7 @@ public class Game extends JPanel implements MouseListener {
      * Runs the bot commands
     */
     private void runbot() {
+        gameState = location.stateChecker(round,pawnA.boardLocation,pawnB.boardLocation,pawnC.boardLocation,pawn1.boardLocation,pawn2.boardLocation,pawn3.boardLocation);
         bot.setPlan(round, gameState);
 
         try {
@@ -137,7 +139,6 @@ public class Game extends JPanel implements MouseListener {
         round = 1;
         wins = 0;
         loss = 0;
-        gameState = 0;
         playerChose = false;
     }
 
