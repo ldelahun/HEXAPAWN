@@ -85,13 +85,13 @@ public class BoardLocations {
     // Check if it is placeable
     public int moveOptions(int round, int pawn, int box, int boardState) {
         int boxPosition = 10;
-        int[][][][] possiblePositions = {
-            {
-                {
-                    {4,10,10}
+        int[][][][] possiblePositions = { // God comes to die right here
+            { // What pawn this thing is
+                { // What round we are on
+                    {4,10,10} // Game state of the board 
                 },
                 {
-                    {4,10,10}
+
                 }
             },
             {
@@ -121,5 +121,13 @@ public class BoardLocations {
         }
 
         return boxPosition;
+    }
+
+    public int stateChecker(){
+        
+        
+        
+        
+        return 0;
     }
 }

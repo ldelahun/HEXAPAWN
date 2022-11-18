@@ -12,6 +12,7 @@ public class Game extends JPanel implements MouseListener {
     static Pawns pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
     static BoardLocations location = new BoardLocations();
     static SelectedBox box1, box2, box3;
+    static BotBrain bot = new BotBrain();
 
     // Game data
     static int wins, loss, round, gameState;
@@ -104,8 +105,29 @@ public class Game extends JPanel implements MouseListener {
             pawn.boardLocation = pawnPosition;
             pawn.type = pawn.defaultType;
             round++;
-            playerChose = false; // Resets Player stuff
+            // playerChose = false; // Resets Player stuff
+            
+            runbot();
         }
+    }
+
+    /*
+     * Runs the bot commands
+    */
+    private void runbot() {
+        bot.setPlan(round, gameState);
+
+        try {
+            pawn1.boardLocation = bot.locations[0];
+            pawn2.boardLocation = bot.locations[1];
+            pawn3.boardLocation = bot.locations[2];
+        } catch (Exception e) {
+            System.out.println("Bot Location Access Fail -"+e);
+        }
+
+        round++;
+        
+        playerChose = false;
 
         repaint();
     }
