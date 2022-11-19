@@ -41,12 +41,19 @@ public class BotBrain {
                 {1,2,6}
             },
             {
-
+                {4,2,3},
+                {5,2,3},
+                {1,2,5},
+                {1,2,6}
             },
             {
-
+                {4,2,3},
+                {1,5,3},
+                {1,6,3}
             }
         };
+
+        System.out.println(gamePlans[gameState].length);
         
         int rand = random.nextInt(gamePlans[gameState].length);
 
