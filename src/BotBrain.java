@@ -53,7 +53,6 @@ public class BotBrain {
             }
         };
 
-        System.out.println(gamePlans[gameState].length);
         
         int rand = random.nextInt(gamePlans[gameState].length);
 
