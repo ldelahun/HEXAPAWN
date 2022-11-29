@@ -77,7 +77,8 @@ public class Game extends JPanel implements MouseListener {
     }
 
     private void pawnSelected(Pawns pawn) {
-        gameState = location.stateChecker(round,pawnA.boardLocation,pawnB.boardLocation,pawnC.boardLocation,pawn1.boardLocation,pawn2.boardLocation,pawn3.boardLocation);
+        gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
         pawn.type = 4;// Sets pawn select icon
         playerSelectionPawn = pawn;
         playerChose = true;
@@ -98,7 +99,9 @@ public class Game extends JPanel implements MouseListener {
 
     private void locationChecker(Pawns pawn, int pawnPosition) {
 
-        if (location.moveOptions(round, pawn.defaultType, 0, gameState) == pawnPosition || location.moveOptions(round, pawn.defaultType, 1, gameState) == pawnPosition || location.moveOptions(round, pawn.defaultType, 2, gameState) == pawnPosition ) {
+        if (location.moveOptions(round, pawn.defaultType, 0, gameState) == pawnPosition
+                || location.moveOptions(round, pawn.defaultType, 1, gameState) == pawnPosition
+                || location.moveOptions(round, pawn.defaultType, 2, gameState) == pawnPosition) {
             box1.toDraw = false;
             box2.toDraw = false;
             box3.toDraw = false;
@@ -107,16 +110,17 @@ public class Game extends JPanel implements MouseListener {
             pawn.type = pawn.defaultType;
             round++;
             // playerChose = false; // Resets Player stuff
-            
+
             runbot();
         }
     }
 
     /*
      * Runs the bot commands
-    */
+     */
     private void runbot() {
-        gameState = location.stateChecker(round,pawnA.boardLocation,pawnB.boardLocation,pawnC.boardLocation,pawn1.boardLocation,pawn2.boardLocation,pawn3.boardLocation);
+        gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
         bot.setPlan(round, gameState);
 
         try {
@@ -124,11 +128,11 @@ public class Game extends JPanel implements MouseListener {
             pawn2.boardLocation = bot.locations[1];
             pawn3.boardLocation = bot.locations[2];
         } catch (Exception e) {
-            System.out.println("Bot Location Access Fail -"+e);
+            System.out.println("Bot Location Access Fail -" + e);
         }
 
         round++;
-        
+
         playerChose = false;
 
         repaint();

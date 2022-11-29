@@ -142,7 +142,7 @@ public class Main {
     }
 
     private static void displayBot() {
-        String text = "IN Future";
+        String text = "Its coming";
 
         JOptionPane.showMessageDialog(null, text, "Bot Information", JOptionPane.PLAIN_MESSAGE);
     }
