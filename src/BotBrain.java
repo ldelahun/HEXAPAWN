@@ -18,7 +18,7 @@ public class BotBrain {
     /*
      * This will be the move database that the bot uses
      */
-    final int[][][][] BOTMOVESET = {
+    int[][][][] BOTMOVESET = {
             { // Round 2
                     {
                             { 1, 4, 3 }, // Movesets
