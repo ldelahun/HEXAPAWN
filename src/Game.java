@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
 public class Game extends JPanel implements MouseListener {
     // Objects
     static Pawns pawnA, pawnB, pawnC, pawn1, pawn2, pawn3, playerSelectionPawn;
-    static BoardLocations location = new BoardLocations();
+    static Board location = new Board();
     static SelectedBox box1, box2, box3;
     static BotBrain bot = new BotBrain();
 
@@ -109,7 +109,8 @@ public class Game extends JPanel implements MouseListener {
             pawn.boardLocation = pawnPosition;
             pawn.type = pawn.defaultType;
             round++;
-            // playerChose = false; // Resets Player stuff
+
+            removePawns();
 
             runbot();
         }
@@ -127,9 +128,12 @@ public class Game extends JPanel implements MouseListener {
             pawn1.boardLocation = bot.locations[0];
             pawn2.boardLocation = bot.locations[1];
             pawn3.boardLocation = bot.locations[2];
+
         } catch (Exception e) {
             System.out.println("Bot Location Access Fail -" + e);
         }
+
+        removePawns();
 
         round++;
 
@@ -144,6 +148,20 @@ public class Game extends JPanel implements MouseListener {
         wins = 0;
         loss = 0;
         playerChose = false;
+    }
+
+    /*
+     * This method checks if all the pawns are still playable
+     * Hint: this is my lazy attempt to fix pawn battles
+     */
+    private static void removePawns() {
+        pawnA.isActive = location.pawnActive(round, gameState, 0);
+        pawnB.isActive = location.pawnActive(round, gameState, 1);
+        pawnC.isActive = location.pawnActive(round, gameState, 3);
+
+        pawn1.isActive = location.pawnActive(round, gameState, 4);
+        pawn2.isActive = location.pawnActive(round, gameState, 5);
+        pawn3.isActive = location.pawnActive(round, gameState, 6);
     }
 
     // Drawing Board

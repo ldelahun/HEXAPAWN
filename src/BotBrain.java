@@ -53,26 +53,15 @@ public class BotBrain {
      * This will activate the brain of the bot
      */
     public void setPlan(int round, int gameState) {
-        switch (round) {
-            case 2:
-                roundTwo(gameState);
-                break;
+        round--;
+        round--;
 
-            default:
-                break;
-        }
-    }
-
-    /*
-     * Round 2 bot events
-     */
-    private void roundTwo(int gameState) {
-
-        int rand = random.nextInt(BOTMOVESET[0][gameState].length);
+        int rand = random.nextInt(BOTMOVESET[round][gameState].length);
+        System.out.println(rand+" "+BOTMOVESET[round][gameState].length);
 
         try {
             for (int i = 0; i < 3; i++) {
-                locations[i] = BOTMOVESET[0][gameState][rand][i];
+                locations[i] = BOTMOVESET[round][gameState][rand][i];
             }
         } catch (Exception e) {
             System.out.println("Round 2 Game plans failed - " + e);

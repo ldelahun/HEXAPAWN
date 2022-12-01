@@ -18,7 +18,7 @@ public class Pawns {
     String[] pawnIcons = {"Imgs/Pawns/Player/PawnA.png","Imgs/Pawns/Player/PawnB.png","Imgs/Pawns/Player/PawnC.png","Imgs/Pawns/Bot/PawnBot.png","Imgs/Pawns/Special/PawnSpecial.png"};//All known pawn icons
 
     // objs
-    BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
+    Board board = new Board();//Usefull object for board x,y locations
 
     Pawns(int pawnType){
         //Applying Data

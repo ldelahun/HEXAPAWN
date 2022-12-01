@@ -14,7 +14,7 @@ class SelectedBox {
 
     // Objects
     ImageIcon icon = new ImageIcon("Imgs/WindowStuff/allowedBox.png");
-    BoardLocations board = new BoardLocations();//Usefull object for board x,y locations
+    Board board = new Board();//Usefull object for board x,y locations
 
     public void draw(Graphics g) {
         board.boardValues(location);// Getting x and y locations

@@ -1,6 +1,6 @@
 package src;
 
-public class BoardLocations {
+public class Board {
     int x, y;
 
     // Location data base
@@ -152,5 +152,10 @@ public class BoardLocations {
         
         
         return gameState;
+    }
+
+    public boolean pawnActive(int round, int gameState, int pawn){
+        
+        return true;
     }
 }
