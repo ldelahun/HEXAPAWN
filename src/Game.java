@@ -67,11 +67,17 @@ public class Game extends JPanel implements MouseListener {
     // Player Things
     private void characterSelection(int box) {
         if (pawnA.boardLocation == box) {
-            pawnSelected(pawnA);
+            if (pawnA.isActive) {
+                pawnSelected(pawnA);
+            }
         } else if (pawnB.boardLocation == box) {
-            pawnSelected(pawnB);
+            if (pawnB.isActive) {
+                pawnSelected(pawnB);
+            }
         } else if (pawnC.boardLocation == box) {
-            pawnSelected(pawnC);
+            if (pawnC.isActive) {
+                pawnSelected(pawnC);
+            }
         }
 
     }
@@ -98,6 +104,8 @@ public class Game extends JPanel implements MouseListener {
     }
 
     private void locationChecker(Pawns pawn, int pawnPosition) {
+        gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
 
         if (location.moveOptions(round, pawn.defaultType, 0, gameState) == pawnPosition
                 || location.moveOptions(round, pawn.defaultType, 1, gameState) == pawnPosition
@@ -121,7 +129,7 @@ public class Game extends JPanel implements MouseListener {
      */
     private void runbot() {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
-                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
         bot.setPlan(round, gameState);
 
         try {
@@ -133,9 +141,11 @@ public class Game extends JPanel implements MouseListener {
             System.out.println("Bot Location Access Fail -" + e);
         }
 
-        removePawns();
-
         round++;
+
+        gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+        removePawns();
 
         playerChose = false;
 
@@ -155,13 +165,16 @@ public class Game extends JPanel implements MouseListener {
      * Hint: this is my lazy attempt to fix pawn battles
      */
     private static void removePawns() {
+        //gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+                //pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+
         pawnA.isActive = location.pawnActive(round, gameState, 0);
         pawnB.isActive = location.pawnActive(round, gameState, 1);
-        pawnC.isActive = location.pawnActive(round, gameState, 3);
+        pawnC.isActive = location.pawnActive(round, gameState, 2);
 
-        pawn1.isActive = location.pawnActive(round, gameState, 4);
-        pawn2.isActive = location.pawnActive(round, gameState, 5);
-        pawn3.isActive = location.pawnActive(round, gameState, 6);
+        pawn1.isActive = location.pawnActive(round, gameState, 3);
+        pawn2.isActive = location.pawnActive(round, gameState, 4);
+        pawn3.isActive = location.pawnActive(round, gameState, 5);
     }
 
     // Drawing Board

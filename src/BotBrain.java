@@ -20,7 +20,7 @@ public class BotBrain {
      */
     int[][][][] BOTMOVESET = {
             { // Round 2
-                    {
+                    { // Gamestates
                             { 1, 4, 3 }, // Movesets
                             { 1, 5, 3 },
                             { 1, 2, 6 }
@@ -61,7 +61,7 @@ public class BotBrain {
 
         try {
             for (int i = 0; i < 3; i++) {
-                locations[i] = BOTMOVESET[round][gameState][rand][i];
+                locations[i] = BOTMOVESET[round][gameState][2][i];
             }
         } catch (Exception e) {
             System.out.println("Round 2 Game plans failed - " + e);

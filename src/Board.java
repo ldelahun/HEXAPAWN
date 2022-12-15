@@ -90,14 +90,16 @@ public class Board {
                         { // What round we are on
                                 { 4, 10, 10 } // Game state of the board
                         },
+                        {}, // PlaceHolder
                         {
-
+                                { 10, 10, 10 },
                         }
                 },
                 {
                         {
                                 { 5, 10, 10 }
                         },
+                        {}, // PlaceHolder
                         {
 
                         }
@@ -106,6 +108,7 @@ public class Board {
                         {
                                 { 6, 10, 10 }
                         },
+                        {}, // PlaceHolder
                         {
 
                         }
@@ -144,7 +147,16 @@ public class Board {
                 gameState = 2;
             }
         } else if (round == 3) {
-
+            if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 0;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 1;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 2;
+            }
         } else if (round == 4) {
 
         } else if (round == 5) {
@@ -162,19 +174,27 @@ public class Board {
         boolean stillActive = false;
 
         String[][][] storedPossibilities = {
-                { // Round 1
-                        { "true", "true", "true", "true", "true", "true", }
+                { // End of Round 1
+                        { "true", "true", "true", "true", "true", "true", },
+                        { "true", "true", "true", "true", "true", "true", },
+                        { "true", "true", "true", "true", "true", "true", },
+                },
+                { // End of Round 2
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
                 }
         };
 
-
-        round--;
+        round = round - 2;
 
         try {
-            stillActive = Boolean.valueOf(null)
+            stillActive = Boolean.valueOf(storedPossibilities[round][gameState][pawn]);
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("Massive Problem detected" + e);
         }
+
+        System.out.println(pawn + " " + stillActive);
 
         return stillActive;
     }
