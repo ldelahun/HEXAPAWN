@@ -130,6 +130,10 @@ public class Board {
             int threeLocation) {
         int gameState = -1;
 
+        // System.out.println("The ching has
+        // fallen"+aLocation+"-"+bLocation+"-"+cLocation+"-"+oneLocation+"-"+twoLocation+"-"+threeLocation+"
+        // I have Terminal Cancer"); // Debuging Script
+
         if (round == 1) {
             if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
                     && threeLocation == 3) {
@@ -156,6 +160,18 @@ public class Board {
             } else if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
                     && threeLocation == 6) {
                 gameState = 2;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 3;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 4;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 5;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 6;
             }
         } else if (round == 4) {
 
@@ -183,6 +199,10 @@ public class Board {
                         { "false", "true", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
                 }
         };
 
@@ -194,7 +214,7 @@ public class Board {
             System.out.println("Massive Problem detected" + e);
         }
 
-        System.out.println(pawn + " " + stillActive);
+        System.out.println(pawn + " " + stillActive + " " + gameState);
 
         return stillActive;
     }
