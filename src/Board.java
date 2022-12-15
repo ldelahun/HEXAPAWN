@@ -172,6 +172,15 @@ public class Board {
             } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
                     && threeLocation == 6) {
                 gameState = 6;
+            } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 7;
+            } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 7;
+            } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 8;
             }
         } else if (round == 4) {
 
@@ -203,6 +212,8 @@ public class Board {
                         { "true", "false", "true", "true", "true", "true" },
                         { "true", "false", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
                 }
         };
 

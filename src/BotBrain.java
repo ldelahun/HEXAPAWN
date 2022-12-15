@@ -61,7 +61,7 @@ public class BotBrain {
 
         try {
             for (int i = 0; i < 3; i++) {
-                locations[i] = BOTMOVESET[round][gameState][3][i];
+                locations[i] = BOTMOVESET[round][gameState][2][i];
             }
         } catch (Exception e) {
             System.out.println("Round 2 Game plans failed - " + e);
