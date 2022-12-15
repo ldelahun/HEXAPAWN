@@ -105,7 +105,7 @@ public class Game extends JPanel implements MouseListener {
 
     private void locationChecker(Pawns pawn, int pawnPosition) {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
-        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
 
         if (location.moveOptions(playerRound, pawn.defaultType, 0, gameState) == pawnPosition
                 || location.moveOptions(playerRound, pawn.defaultType, 1, gameState) == pawnPosition
@@ -119,8 +119,10 @@ public class Game extends JPanel implements MouseListener {
             round++;
             playerRound++;
 
+            gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
+                    pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
             removePawns();
-            repaint();      
+            repaint();
             runbot();
         }
     }
@@ -130,7 +132,7 @@ public class Game extends JPanel implements MouseListener {
      */
     private void runbot() {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
-        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
         bot.setPlan(botRound, gameState);
 
         try {
@@ -146,8 +148,8 @@ public class Game extends JPanel implements MouseListener {
         botRound++;
 
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
-        pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
-        
+                pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+
         removePawns();
 
         playerChose = false;
@@ -170,8 +172,9 @@ public class Game extends JPanel implements MouseListener {
      * Hint: this is my lazy attempt to fix pawn battles
      */
     private static void removePawns() {
-        //gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
-                //pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+        // gameState = location.stateChecker(round, pawnA.boardLocation,
+        // pawnB.boardLocation, pawnC.boardLocation,
+        // pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
 
         pawnA.isActive = location.pawnActive(round, gameState, 0);
         pawnB.isActive = location.pawnActive(round, gameState, 1);

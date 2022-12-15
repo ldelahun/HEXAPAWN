@@ -99,6 +99,11 @@ public class Board {
                                 { 10, 10, 10 }, // pawn A
                                 { 4, 5, 10 },
                                 { 6, 10, 10 }
+                        },
+                        {
+                                { 10, 10, 10 },
+                                { 10, 10, 10 },
+                                { 5, 6, 10 },
                         }
                 }
 
@@ -117,7 +122,8 @@ public class Board {
             int threeLocation) {
         int gameState = -1;
 
-        System.out.println("The ching has fallen"+aLocation+"-"+bLocation+"-"+cLocation+"-"+oneLocation+"-"+twoLocation+"-"+threeLocation+"I have Terminal Cancer"); // Debuging Script
+        System.out.println(round + "The ching has fallen" + aLocation + "-" + bLocation + "-" + cLocation + "-"
+                + oneLocation + "-" + twoLocation + "-" + threeLocation + "I have Terminal Cancer"); // Debuging Script
 
         if (round == 1) {
             if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
@@ -168,12 +174,24 @@ public class Board {
                 gameState = 9;
             }
         } else if (round == 4) {
-            if (aLocation == 10 && bLocation == 4 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+            if (aLocation == 4 && bLocation == 4 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
                     && threeLocation == 3) {
                 gameState = 0;
-            } else if (aLocation == 10 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
                     && threeLocation == 3) {
                 gameState = 1;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 2;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 5 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 3;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 4;
+            } else if (aLocation == 2 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 5;
             }
 
         } else if (round == 5) {
@@ -188,8 +206,7 @@ public class Board {
     }
 
     public boolean pawnActive(int round, int gameState, int pawn) {
-        boolean stillActive = true;
-
+        boolean stillActive;
         String[][][] storedPossibilities = {
                 { // End of Round 1
                         { "true", "true", "true", "true", "true", "true" },
@@ -210,22 +227,21 @@ public class Board {
                 },
                 { // End of Round 3
                         { "false", "true", "true", "true", "false", "true" },
-                        { "false", "true", "true", "true", "true", "true" }
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "false", "false", "false", "false", "false", "false" },
                 },
                 { // End of round 4
-                        { "false", "true", "true", "true", "false", "true" }
+                  // { "false", "true", "true", "true", "false", "true" }
                 }
         };
 
         round = round - 2;
 
-        try {
-            stillActive = Boolean.valueOf(storedPossibilities[round][gameState][pawn]);
-        } catch (Exception e) {
-            System.out.println("Massive Problem detected" + e);
-        }
-
-        System.out.println(pawn + " " + stillActive + " " + gameState);
+        stillActive = Boolean.valueOf(storedPossibilities[round][gameState][pawn]);
+        System.out.println(round + " " + pawn + " " + stillActive + " " + gameState);
 
         return stillActive;
     }
