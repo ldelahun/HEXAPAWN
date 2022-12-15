@@ -103,10 +103,10 @@ public class Main {
         winLoss.addActionListener((e) -> displayWins());
         options.add(winLoss);
 
-        // JButton reset = new JButton("RESET");
-        // reset.setPreferredSize(buttonSizes);
-        // reset.addActionListener((e) -> reset());
-        // options.add(reset);
+        JButton reset = new JButton("RESET");
+        reset.setPreferredSize(buttonSizes);
+        reset.addActionListener((e) -> reset());
+        options.add(reset);
 
         options.setBackground(new Color(102, 153, 204));
         options.setPreferredSize(optionListSize);
@@ -151,5 +151,9 @@ public class Main {
         String text = Integer.toString(Game.round);
 
         JOptionPane.showMessageDialog(null, text, "Player Wins", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private static void reset() {
+        main(null);
     }
 }

@@ -83,42 +83,22 @@ public class Board {
     }
 
     // Check if it is placeable
-    public int moveOptions(int round, int pawn, int box, int boardState) {
-        int boxPosition = 10;
+    public int moveOptions(int pRound, int pawn, int box, int boardState) {
+        int boxPosition = 10; // Defualt Position
+
         int[][][][] possiblePositions = { // God comes to die right here
-                { // What pawn this thing is
-                        { // What round we are on
-                                { 4, 10, 10 } // Game state of the board
-                        },
-                        {}, // PlaceHolder
-                        {
-                                { 10, 10, 10 },
-                        }
-                },
-                {
-                        {
-                                { 5, 10, 10 }
-                        },
-                        {}, // PlaceHolder
-                        {
-
-                        }
-                },
-                {
-                        {
+                { // Players first turn
+                        { // Game State 0
+                                { 4, 10, 10 },
+                                { 5, 10, 10 },
                                 { 6, 10, 10 }
-                        },
-                        {}, // PlaceHolder
-                        {
-
                         }
-                }
+                },
+
         };
 
-        round--; // This is to set it up for an array
-
         try {
-            boxPosition = possiblePositions[pawn][round][boardState][box];
+            boxPosition = possiblePositions[pRound][boardState][pawn][box];
         } catch (Exception e) {
             System.out.println("error array is dogshit - " + e);
         }

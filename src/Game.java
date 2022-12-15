@@ -15,7 +15,7 @@ public class Game extends JPanel implements MouseListener {
     static BotBrain bot = new BotBrain();
 
     // Game data
-    static int wins, loss, round, gameState;
+    static int wins, loss, round, gameState, playerRound, botRound;
     boolean playerChose;
 
     Game() {
@@ -90,13 +90,13 @@ public class Game extends JPanel implements MouseListener {
         playerChose = true;
 
         // Shows boxes
-        box1.location = location.moveOptions(round, pawn.defaultType, 0, gameState);
+        box1.location = location.moveOptions(playerRound, pawn.defaultType, 0, gameState);
         box1.toDraw = true;
 
-        box2.location = location.moveOptions(round, pawn.defaultType, 1, gameState);
+        box2.location = location.moveOptions(playerRound, pawn.defaultType, 1, gameState);
         box2.toDraw = true;
 
-        box3.location = location.moveOptions(round, pawn.defaultType, 2, gameState);
+        box3.location = location.moveOptions(playerRound, pawn.defaultType, 2, gameState);
         box3.toDraw = true;
 
         // Updates Board
@@ -107,9 +107,9 @@ public class Game extends JPanel implements MouseListener {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
         pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
 
-        if (location.moveOptions(round, pawn.defaultType, 0, gameState) == pawnPosition
-                || location.moveOptions(round, pawn.defaultType, 1, gameState) == pawnPosition
-                || location.moveOptions(round, pawn.defaultType, 2, gameState) == pawnPosition) {
+        if (location.moveOptions(playerRound, pawn.defaultType, 0, gameState) == pawnPosition
+                || location.moveOptions(playerRound, pawn.defaultType, 1, gameState) == pawnPosition
+                || location.moveOptions(playerRound, pawn.defaultType, 2, gameState) == pawnPosition) {
             box1.toDraw = false;
             box2.toDraw = false;
             box3.toDraw = false;
@@ -117,6 +117,7 @@ public class Game extends JPanel implements MouseListener {
             pawn.boardLocation = pawnPosition;
             pawn.type = pawn.defaultType;
             round++;
+            playerRound++;
 
             removePawns();
 
@@ -155,6 +156,8 @@ public class Game extends JPanel implements MouseListener {
     // RESET Methods
     private void startUpVariables() {
         round = 1;
+        playerRound = 0;
+        botRound = 0;
         wins = 0;
         loss = 0;
         playerChose = false;
