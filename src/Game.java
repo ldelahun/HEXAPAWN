@@ -120,7 +120,7 @@ public class Game extends JPanel implements MouseListener {
             playerRound++;
 
             removePawns();
-
+            repaint();      
             runbot();
         }
     }
@@ -131,7 +131,7 @@ public class Game extends JPanel implements MouseListener {
     private void runbot() {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
         pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
-        bot.setPlan(round, gameState);
+        bot.setPlan(botRound, gameState);
 
         try {
             pawn1.boardLocation = bot.locations[0];
@@ -143,9 +143,11 @@ public class Game extends JPanel implements MouseListener {
         }
 
         round++;
+        botRound++;
 
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
         pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+        
         removePawns();
 
         playerChose = false;

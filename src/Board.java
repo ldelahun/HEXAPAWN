@@ -94,6 +94,13 @@ public class Board {
                                 { 6, 10, 10 }
                         }
                 },
+                { // Players second turn
+                        { // Game state 0
+                                { 10, 10, 10 }, // pawn A
+                                { 4, 5, 10 },
+                                { 6, 10, 10 }
+                        }
+                }
 
         };
 
@@ -163,9 +170,10 @@ public class Board {
                 gameState = 8;
             }
         } else if (round == 4) {
+            gameState = 0;
 
         } else if (round == 5) {
-
+            gameState = 0;
         } else if (round == 6) {
 
         } else if (round == 7) {
@@ -176,13 +184,13 @@ public class Board {
     }
 
     public boolean pawnActive(int round, int gameState, int pawn) {
-        boolean stillActive = false;
+        boolean stillActive = true;
 
         String[][][] storedPossibilities = {
                 { // End of Round 1
-                        { "true", "true", "true", "true", "true", "true", },
-                        { "true", "true", "true", "true", "true", "true", },
-                        { "true", "true", "true", "true", "true", "true", },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
                 },
                 { // End of Round 2
                         { "false", "true", "true", "true", "true", "true" },
@@ -194,6 +202,13 @@ public class Board {
                         { "true", "true", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
                         { "true", "true", "false", "true", "true", "true" },
+                },
+                { // End of Round 3
+                        { "false", "true", "true", "true", "false", "true" },
+                        { "false", "true", "true", "true", "true", "true" }
+                },
+                { // End of round 4
+                        { "false", "true", "true", "true", "false", "true" }
                 }
         };
 
