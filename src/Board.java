@@ -117,9 +117,7 @@ public class Board {
             int threeLocation) {
         int gameState = -1;
 
-        // System.out.println("The ching has
-        // fallen"+aLocation+"-"+bLocation+"-"+cLocation+"-"+oneLocation+"-"+twoLocation+"-"+threeLocation+"
-        // I have Terminal Cancer"); // Debuging Script
+        System.out.println("The ching has fallen"+aLocation+"-"+bLocation+"-"+cLocation+"-"+oneLocation+"-"+twoLocation+"-"+threeLocation+"I have Terminal Cancer"); // Debuging Script
 
         if (round == 1) {
             if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
@@ -164,13 +162,19 @@ public class Board {
                 gameState = 7;
             } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
                     && threeLocation == 3) {
-                gameState = 7;
+                gameState = 8;
             } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
                     && threeLocation == 3) {
-                gameState = 8;
+                gameState = 9;
             }
         } else if (round == 4) {
-            gameState = 0;
+            if (aLocation == 10 && bLocation == 4 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 0;
+            } else if (aLocation == 10 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 1;
+            }
 
         } else if (round == 5) {
             gameState = 0;
@@ -201,7 +205,8 @@ public class Board {
                         { "true", "false", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
                         { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "false", "true", "true", "true" }
                 },
                 { // End of Round 3
                         { "false", "true", "true", "true", "false", "true" },

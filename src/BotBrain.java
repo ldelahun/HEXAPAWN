@@ -38,9 +38,9 @@ public class BotBrain {
                     }
             },
             { // Bots second turn
-                {
-                    {1,4,6}
-                }
+                    {
+                            { 1, 4, 6 }
+                    }
             },
             { // Round 6
 
@@ -57,7 +57,7 @@ public class BotBrain {
     public void setPlan(int round, int gameState) {
 
         int rand = random.nextInt(BOTMOVESET[round][gameState].length);
-        System.out.println(rand+" "+BOTMOVESET[round][gameState].length);
+        System.out.println(rand + " " + BOTMOVESET[round][gameState].length);
 
         try {
             for (int i = 0; i < 3; i++) {

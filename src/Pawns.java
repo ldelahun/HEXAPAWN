@@ -33,6 +33,8 @@ public class Pawns {
         if(isActive){
             ImageIcon icon = new ImageIcon(pawnIcons[type]);
             g.drawImage(icon.getImage(), board.x, board.y, null);
+        }else {
+            boardLocation = 10;
         }
     }
 }
