@@ -86,30 +86,30 @@ public class Board {
     public int moveOptions(int round, int pawn, int box, int boardState) {
         int boxPosition = 10;
         int[][][][] possiblePositions = { // God comes to die right here
-            { // What pawn this thing is
-                { // What round we are on
-                    {4,10,10} // Game state of the board 
+                { // What pawn this thing is
+                        { // What round we are on
+                                { 4, 10, 10 } // Game state of the board
+                        },
+                        {
+
+                        }
                 },
                 {
+                        {
+                                { 5, 10, 10 }
+                        },
+                        {
 
-                }
-            },
-            {
-                {
-                    {5,10,10}
+                        }
                 },
                 {
+                        {
+                                { 6, 10, 10 }
+                        },
+                        {
 
+                        }
                 }
-            },
-            {
-                {
-                    {6,10,10}
-                },
-                {
-
-                }
-            }
         };
 
         round--; // This is to set it up for an array
@@ -117,45 +117,65 @@ public class Board {
         try {
             boxPosition = possiblePositions[pawn][round][boardState][box];
         } catch (Exception e) {
-            System.out.println("error array is dogshit - "+e);
+            System.out.println("error array is dogshit - " + e);
         }
 
         return boxPosition;
     }
 
-    public int stateChecker(int round, int aLocation, int bLocation, int cLocation, int oneLocation, int twoLocation, int threeLocation){
+    public int stateChecker(int round, int aLocation, int bLocation, int cLocation, int oneLocation, int twoLocation,
+            int threeLocation) {
         int gameState = -1;
-        
+
         if (round == 1) {
-            if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+            if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 3) {
                 gameState = 0;
             }
-        }else if (round == 2) {
-            if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+        } else if (round == 2) {
+            if (aLocation == 4 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 3) {
                 gameState = 0;
-            }else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 3) {
                 gameState = 1;
-            }else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 2 && threeLocation == 3) {
+            } else if (aLocation == 7 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 3) {
                 gameState = 2;
             }
-        }else if (round == 3) {
+        } else if (round == 3) {
 
-        }else if (round == 4) {
+        } else if (round == 4) {
 
-        }else if(round == 5){
-            
-        }else if(round == 6){
+        } else if (round == 5) {
 
-        }else if(round == 7){
+        } else if (round == 6) {
+
+        } else if (round == 7) {
 
         }
-        
-        
+
         return gameState;
     }
 
-    public boolean pawnActive(int round, int gameState, int pawn){
-        
-        return true;
+    public boolean pawnActive(int round, int gameState, int pawn) {
+        boolean stillActive = false;
+
+        String[][][] storedPossibilities = {
+                { // Round 1
+                        { "true", "true", "true", "true", "true", "true", }
+                }
+        };
+
+
+        round--;
+
+        try {
+            stillActive = Boolean.valueOf(null)
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return stillActive;
     }
 }
