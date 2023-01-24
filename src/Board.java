@@ -214,24 +214,10 @@ public class Board {
                         { "true", "true", "true", "true", "true", "true" },
                 },
                 { // End of Round 2
-                        { "false", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "false", "true", "true", "true", "true" },
-                        { "true", "false", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "true", "true", "false", "true", "true", "true" }
+                        
                 },
                 { // End of Round 3
-                        { "false", "true", "true", "true", "false", "true" },
-                        { "false", "true", "true", "true", "true", "true" },
-                        { "false", "true", "true", "true", "true", "true" },
-                        { "true", "true", "true", "true", "false", "true" },
-                        { "true", "true", "true", "true", "true", "true" },
-                        { "false", "false", "false", "false", "false", "false" },
+                        
                 },
                 { // End of round 4
                   // { "false", "true", "true", "true", "false", "true" }
