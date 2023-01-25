@@ -295,7 +295,13 @@ public class Board {
             }
 
         } else if (round == 5) {
-            gameState = 0;
+            if (aLocation == 4 && bLocation == 4 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 6) {
+                gameState = 0;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 7
+                    && threeLocation == 3) {
+                gameState = 1;
+            }
         } else if (round == 6) {
 
         } else if (round == 7) {
@@ -355,7 +361,9 @@ public class Board {
 
                 },
                 { // End of round 4
-                  // { "false", "true", "true", "true", "false", "true" }
+                        { "false", "true", "true", "true", "false", "true" },
+                        { "false", "true", "true", "true", "true", "true" },
+
                 }
         };
 

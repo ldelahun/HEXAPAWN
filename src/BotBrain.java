@@ -28,8 +28,8 @@ public class BotBrain {
                         { // Bots first turn
                                         { // Gamestates
                                                         { 1, 4, 3, 1 }, // Movesets
-                                                        { 1, 5, 3, 1 }, //
-                                                        { 1, 2, 6, 1 } //
+                                                        { 1, 5, 3, 0 }, //
+                                                        { 1, 2, 6, 0 } //
                                         },
                                         {
                                                         { 4, 2, 3, 1 }, //
@@ -44,7 +44,15 @@ public class BotBrain {
                                         }
                         },
                         { // Bots second turn
-
+                                        {
+                                                        { 1, 4, 6, 1 }
+                                        },
+                                        {
+                                                        { 1, 7, 3, 1 },
+                                        },
+                                        {
+                                                        { 1, 7, 3, 1 }
+                                        }
                         },
                         { // Round 6
 
@@ -85,7 +93,6 @@ public class BotBrain {
 
                 for (int i = 0; i < BOTMOVESET[r][g].length; i++) {
                         if (BOTMOVESET[r][g][i][3] == 1) {
-                                System.out.println("FUCK YEAH" + " " + i);
 
                                 possibleMoves.add(i);
                         }
