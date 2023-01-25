@@ -155,5 +155,6 @@ public class Main {
 
     private static void reset() {
         main(null);
+        //System.exit(0); // Maybe one day this will work
     }
 }

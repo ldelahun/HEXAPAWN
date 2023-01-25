@@ -104,7 +104,47 @@ public class Board {
                                 { 10, 10, 10 },
                                 { 10, 10, 10 },
                                 { 5, 6, 10 },
-                        }
+                        },
+                        {
+                                { 2, 10, 10 },
+                                { 5, 6, 10 },
+                                { 10, 10, 10 },
+                        },
+                        {
+                                { 10, 10, 10 },
+                                { 3, 10, 10 },
+                                { 6, 10, 10 },
+                        },
+                        {
+                                { 4, 5, 10 },
+                                { 10, 10, 10 },
+                                { 5, 6, 10 },
+                        },
+                        {
+                                { 4, 5, 10 },
+                                { 10, 10, 10 },
+                                { 5, 6, 10 },
+                        },
+                        {
+                                { 4, 10, 10 },
+                                { 1, 10, 10 },
+                                { 10, 10, 10 },
+                        },
+                        {
+                                { 10, 10, 10 },
+                                { 4, 5, 10 },
+                                { 2, 10, 10 },
+                        },
+                        {
+                                { 4, 5, 10 },
+                                { 10, 10, 10 },
+                                { 10, 10, 10 },
+                        },
+                        {
+                                { 4, 10, 10 },
+                                { 5, 6, 10 },
+                                { 10, 10, 10 },
+                        },
                 }
 
         };
@@ -125,7 +165,7 @@ public class Board {
         System.out.println(round + "The ching has fallen" + aLocation + "-" + bLocation + "-" + cLocation + "-"
                 + oneLocation + "-" + twoLocation + "-" + threeLocation + "I have Terminal Cancer"); // Debuging Script
 
-        if (round == 1) {
+        if (round == 1) { // Start of all rounds
             if (aLocation == 7 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
                     && threeLocation == 3) {
                 gameState = 0;
@@ -192,6 +232,66 @@ public class Board {
             } else if (aLocation == 2 && bLocation == 8 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
                     && threeLocation == 6) {
                 gameState = 5;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 6;
+            } else if (aLocation == 4 && bLocation == 6 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 7;
+            } else if (aLocation == 7 && bLocation == 3 && cLocation == 9 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 8;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 9;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 10;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 11;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 12;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 13;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 14;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 15;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 16;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 17;
+            } else if (aLocation == 7 && bLocation == 1 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 18;
+            } else if (aLocation == 7 && bLocation == 4 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 19;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 20;
+            } else if (aLocation == 7 && bLocation == 8 && cLocation == 2 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 21;
+            } else if (aLocation == 5 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 22;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 23;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 24;
+            } else if (aLocation == 7 && bLocation == 6 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 25;
             }
 
         } else if (round == 5) {
@@ -214,10 +314,45 @@ public class Board {
                         { "true", "true", "true", "true", "true", "true" },
                 },
                 { // End of Round 2
-                        
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
                 },
                 { // End of Round 3
-                        
+                        { "false", "true", "true", "true", "false", "true" },
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "false", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "false" },
+                        { "true", "true", "true", "true", "true", "false" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "false", "true", "true" },
+                        { "true", "false", "true", "false", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "false" },
+                        { "true", "false", "true", "true", "true", "false" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "true", "true", "false", "true", "true" },
+                        { "true", "true", "true", "false", "true", "true" },
+                        { "true", "true", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "true", "false", "true", "false", "true" },
+
                 },
                 { // End of round 4
                   // { "false", "true", "true", "true", "false", "true" }

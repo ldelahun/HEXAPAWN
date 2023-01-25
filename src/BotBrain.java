@@ -19,7 +19,7 @@ public class BotBrain {
         /*
          * Memory of recent move
          */
-        private int pastMove;
+        private int[] pastMove = { 0, 0, 0 };
 
         /*
          * This will be the move database that the bot uses
@@ -28,17 +28,17 @@ public class BotBrain {
                         { // Bots first turn
                                         { // Gamestates
                                                         { 1, 4, 3, 1 }, // Movesets
-                                                        { 1, 5, 3, 1 },
-                                                        { 1, 2, 6, 1 }
+                                                        { 1, 5, 3, 1 }, //
+                                                        { 1, 2, 6, 1 } //
                                         },
                                         {
-                                                        { 4, 2, 3, 1 },
-                                                        { 5, 2, 3, 1 },
-                                                        { 1, 2, 5, 1 },
-                                                        { 1, 2, 6, 1 }
+                                                        { 4, 2, 3, 1 }, //
+                                                        { 5, 2, 3, 1 }, //
+                                                        { 1, 2, 5, 1 }, //
+                                                        { 1, 2, 6, 1 }//
                                         },
                                         {
-                                                        { 4, 2, 3, 1 },
+                                                        { 4, 2, 3, 1 }, //
                                                         { 1, 5, 3, 1 },
                                                         { 1, 6, 3, 1 }
                                         }
@@ -62,7 +62,7 @@ public class BotBrain {
 
                 int move = checkPlan(round, gameState);
 
-                pastMove = move;
+                storeMove(round, gameState, move);
 
                 System.out.println(move);
 
@@ -96,5 +96,16 @@ public class BotBrain {
                 randPlan = random.nextInt(possibleMoves.size());
 
                 return possibleMoves.get(randPlan);
+        }
+
+        /*
+         * Stores previous move
+         */
+        private void storeMove(int round, int game, int move) {
+                pastMove[0] = round;
+                pastMove[1] = game;
+                pastMove[2] = move;
+
+                System.out.println("STORED MOVE -" + pastMove[0] + "," + pastMove[1] + "," + pastMove[2]);
         }
 }
