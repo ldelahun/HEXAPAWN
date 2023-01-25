@@ -27,8 +27,8 @@ public class BotBrain {
         int[][][][] BOTMOVESET = {
                         { // Bots first turn
                                         { // Gamestates
-                                                        { 1, 4, 3, 0 }, // Movesets
-                                                        { 1, 5, 3, 0 },
+                                                        { 1, 4, 3, 1 }, // Movesets
+                                                        { 1, 5, 3, 1 },
                                                         { 1, 2, 6, 1 }
                                         },
                                         {
@@ -64,6 +64,8 @@ public class BotBrain {
 
                 pastMove = move;
 
+                System.out.println(move);
+
                 try {
                         for (int i = 0; i < 3; i++) {
                                 locations[i] = BOTMOVESET[round][gameState][move][i];
@@ -77,10 +79,22 @@ public class BotBrain {
          * checking if the move is still in play
          */
         private int checkPlan(int r, int g) {
-                int plan = random.nextInt(BOTMOVESET[r][g].length);
+                int randPlan;
 
                 ArrayList<Integer> possibleMoves = new ArrayList<Integer>(); // Eat Shit dumbass
 
-                return plan;
+                for (int i = 0; i < BOTMOVESET[r][g].length; i++) {
+                        if (BOTMOVESET[r][g][i][3] == 1) {
+                                System.out.println("FUCK YEAH" + " " + i);
+
+                                possibleMoves.add(i);
+                        }
+                }
+
+                System.out.println(possibleMoves);
+
+                randPlan = random.nextInt(possibleMoves.size());
+
+                return possibleMoves.get(randPlan);
         }
 }
