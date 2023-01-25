@@ -4,6 +4,7 @@
 
 package src;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class BotBrain {
@@ -78,11 +79,7 @@ public class BotBrain {
         private int checkPlan(int r, int g) {
                 int plan = random.nextInt(BOTMOVESET[r][g].length);
 
-                if (BOTMOVESET[r][g][plan][3] == 0) {
-                        System.out.println(BOTMOVESET[r][g][plan][3]);
-                        System.out.println(BOTMOVESET[r][g][plan][0]+" "+BOTMOVESET[r][g][plan][1]+" "+BOTMOVESET[r][g][plan][2]);
-                        checkPlan(r, g);
-                }
+                ArrayList<Integer> possibleMoves = new ArrayList<Integer>(); // Eat Shit dumbass
 
                 return plan;
         }
