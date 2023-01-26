@@ -95,18 +95,18 @@ public class Board {
                         }
                 },
                 { // Players second turn
-                        { // Game state 0
+                        { // Chilled out
                                 { 10, 10, 10 }, // pawn A
                                 { 4, 5, 10 },
                                 { 6, 10, 10 }
                         },
-                        {
+                        { // Chilled out
                                 { 10, 10, 10 },
                                 { 10, 10, 10 },
                                 { 5, 6, 10 },
                         },
                         {
-                                { 2, 10, 10 },
+                                { 2, 10, 10 }, // Win Condition
                                 { 5, 6, 10 },
                                 { 10, 10, 10 },
                         },
@@ -249,7 +249,7 @@ public class Board {
                 gameState = 10;
             } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
                     && threeLocation == 3) {
-                gameState = 11;
+                gameState = 11; // Next one
             } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
                     && threeLocation == 3) {
                 gameState = 12;
@@ -276,7 +276,7 @@ public class Board {
                 gameState = 19;
             } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
                     && threeLocation == 3) {
-                gameState = 20;
+                gameState = 20; // this may be useless
             } else if (aLocation == 7 && bLocation == 8 && cLocation == 2 && oneLocation == 4 && twoLocation == 2
                     && threeLocation == 3) {
                 gameState = 21;
@@ -301,18 +301,138 @@ public class Board {
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 4
                     && threeLocation == 3) {
                 gameState = 1;
-            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
-                    && threeLocation == 5) {
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 7
+                    && threeLocation == 3) {
                 gameState = 2;
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
-                    && threeLocation == 6) {
+                    && threeLocation == 5) {
                 gameState = 3;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 6) {
+                gameState = 4;
             } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 7
                     && threeLocation == 3) {
-                gameState = 4;
+                gameState = 5;
             } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 8
                     && threeLocation == 3) {
-                gameState = 5;
+                gameState = 6;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 5 && oneLocation == 5 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 7;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 5 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 5) {
+                gameState = 8;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 5 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 6) {
+                gameState = 9;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 10;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 6) {
+                gameState = 11;
+            } else if (aLocation == 4 && bLocation == 6 && cLocation == 9 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 6) {
+                gameState = 12;
+            } else if (aLocation == 4 && bLocation == 6 && cLocation == 9 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 6) {
+                gameState = 13;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 14;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 15;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 8 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 16;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 9 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 17;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 18;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 19;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 20;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 21;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 22;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 6) {
+                gameState = 23;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 7 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 24;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 8 && twoLocation == 2
+                    && threeLocation == 3) {
+                gameState = 25;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 26;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
+                    && threeLocation == 5) {
+                gameState = 27;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 8) {
+                gameState = 28;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 9) {
+                gameState = 29;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 30;
+            } else if (aLocation == 5 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 31;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 32;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 33;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 4 && twoLocation == 2
+                    && threeLocation == 5) {
+                gameState = 34;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
+                    && threeLocation == 5) {
+                gameState = 35;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 7) {
+                gameState = 36;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 2
+                    && threeLocation == 8) {
+                gameState = 37;
+            } else if (aLocation == 7 && bLocation == 4 && cLocation == 6 && oneLocation == 4 && twoLocation == 4
+                    && threeLocation == 3) {
+                gameState = 38;
+            } else if (aLocation == 7 && bLocation == 4 && cLocation == 6 && oneLocation == 4 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 39;
+            } else if (aLocation == 5 && bLocation == 8 && cLocation == 6 && oneLocation == 4 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 40;
+            } else if (aLocation == 5 && bLocation == 8 && cLocation == 6 && oneLocation == 5 && twoLocation == 5
+                    && threeLocation == 3) {
+                gameState = 41;
+            } else if (aLocation == 5 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 5) {
+                gameState = 42;
+            } else if (aLocation == 4 && bLocation == 8 && cLocation == 6 && oneLocation == 1 && twoLocation == 9
+                    && threeLocation == 3) {
+                gameState = 43;
+            } else if (aLocation == 7 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 9
+                    && threeLocation == 3) {
+                gameState = 44;
+            } else if (aLocation == 7 && bLocation == 6 && cLocation == 6 && oneLocation == 4 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 45;
             }
         } else if (round == 6) {
 
@@ -375,11 +495,50 @@ public class Board {
                 { // End of round 4
                         { "false", "true", "true", "true", "false", "true" },
                         { "false", "false", "true", "true", "true", "true" },
+                        { "false", "true", "true", "true", "true", "true" },
                         { "false", "false", "true", "true", "true", "true" },
                         { "false", "true", "true", "true", "true", "true" },
                         { "false", "true", "true", "true", "true", "true" },
                         { "false", "false", "true", "true", "true", "true" },
-
+                        { "true", "true", "false", "true", "false", "true" },
+                        { "true", "true", "false", "true", "false", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "true", "true", "true", "true", "false" },
+                        { "true", "false", "true", "true", "true", "false" },
+                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "false", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "false", "false", "true", "false", "true", "true" },
+                        { "true", "false", "true", "false", "true", "true" },
+                        { "true", "false", "false", "false", "true", "true" },
+                        { "true", "false", "true", "false", "true", "true" },
+                        { "false", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "false", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "false" },
+                        { "false", "false", "true", "true", "true", "false" },
+                        { "true", "false", "true", "true", "true", "false" },
+                        { "true", "false", "false", "true", "true", "false" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "false", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "true", "true", "true" },
+                        { "true", "false", "true", "false", "true", "true" },
+                        { "true", "true", "true", "false", "true", "true" },
+                        { "true", "true", "true", "true", "false", "true" },
+                        { "false", "true", "true", "true", "false", "true" },
+                        { "false", "true", "true", "true", "false", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "true", "false", "true", "true", "true" },
+                        { "true", "true", "false", "true", "false", "true" },
                 }
         };
 
