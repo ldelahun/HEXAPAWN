@@ -145,6 +145,13 @@ public class Board {
                                 { 5, 6, 10 },
                                 { 10, 10, 10 },
                         },
+                },
+                { // Players third turn WOw
+                        {
+                                { 10, 10, 10 },
+                                { 10, 10, 10 },
+                                { 10, 10, 10 },
+                        }
                 }
 
         };
@@ -297,7 +304,7 @@ public class Board {
         } else if (round == 5) {
             if (aLocation == 4 && bLocation == 4 && cLocation == 9 && oneLocation == 1 && twoLocation == 4
                     && threeLocation == 6) {
-                gameState = 0;
+                gameState = 0; //
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 9 && oneLocation == 5 && twoLocation == 4
                     && threeLocation == 3) {
                 gameState = 1;
@@ -435,7 +442,10 @@ public class Board {
                 gameState = 45;
             }
         } else if (round == 6) {
-
+            if (aLocation == 7 && bLocation == 6 && cLocation == 6 && oneLocation == 4 && twoLocation == 6
+                    && threeLocation == 3) {
+                gameState = 0;
+            }
         } else if (round == 7) {
 
         }
