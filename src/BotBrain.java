@@ -49,9 +49,9 @@ public class BotBrain {
                                         },
                                         {
                                                         { 5, 4, 3, 1 }, // Good checked off
-                                                        { 1, 7, 3, 0 },
-                                                        { 1, 4, 5, 0 },
-                                                        { 1, 4, 6, 0 },
+                                                        { 1, 7, 3, 1 },
+                                                        { 1, 4, 5, 1 },
+                                                        { 1, 4, 6, 1 },
                                         },
                                         {
                                                         { 1, 7, 3, 1 }, // Good dont touch
@@ -74,6 +74,7 @@ public class BotBrain {
                                                         { 1, 4, 6, 1 },
                                         },
                                         {
+                                                        { 1, 4, 6, 1 },
                                                         { 1, 5, 6, 1 },
                                                         { 1, 6, 6, 1 },
                                         },
@@ -127,7 +128,8 @@ public class BotBrain {
                                         },
                                         {
                                                         { 4, 4, 3, 1 },
-                                                        { 4, 5, 3, 1 }
+                                                        { 4, 5, 3, 1 },
+                                                        { 4, 6, 3, 1 }
                                         },
                                         {
                                                         { 10, 10, 10, 1 } // Cant do anything
@@ -137,8 +139,6 @@ public class BotBrain {
                                         },
                                         {
                                                         { 4, 5, 3, 1 },
-                                                        { 5, 5, 3, 1 },
-                                                        { 1, 5, 5, 1 }
                                         },
                                         {
                                                         { 1, 8, 3, 1 },
@@ -154,7 +154,7 @@ public class BotBrain {
                                                         { 4, 6, 3, 1 }
                                         }
                         },
-                        { // Round 6
+                        { // Bots last turn
 
                         }
         };
