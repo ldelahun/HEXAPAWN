@@ -360,6 +360,9 @@ public class Board {
                                 { 10, 10, 10 },
                         },
 
+                },
+                { // Final player round
+
                 }
 
         };
@@ -727,16 +730,16 @@ public class Board {
                 gameState = 21; //
             } else if (aLocation == 5 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 2
                     && threeLocation == 5) {
-                gameState = 22; //
+                gameState = 22;
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
                     && threeLocation == 5) {
                 gameState = 23; //
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
                     && threeLocation == 6) {
-                gameState = 24; //
+                gameState = 24;
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 6
                     && threeLocation == 3) {
-                gameState = 25; //
+                gameState = 25;
             } else if (aLocation == 5 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 6
                     && threeLocation == 3) {
                 gameState = 26;
@@ -745,7 +748,7 @@ public class Board {
                 gameState = 27;
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
                     && threeLocation == 5) {
-                gameState = 28;
+                gameState = 28; //
             } else if (aLocation == 5 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 6
                     && threeLocation == 5) {
                 gameState = 29;
@@ -757,13 +760,13 @@ public class Board {
                 gameState = 31;
             } else if (aLocation == 7 && bLocation == 1 && cLocation == 6 && oneLocation == 4 && twoLocation == 6
                     && threeLocation == 3) {
-                gameState = 32;
+                gameState = 32;//
             } else if (aLocation == 2 && bLocation == 8 && cLocation == 6 && oneLocation == 4 && twoLocation == 5
                     && threeLocation == 3) {
-                gameState = 33;
+                gameState = 33; //
             } else if (aLocation == 3 && bLocation == 8 && cLocation == 6 && oneLocation == 4 && twoLocation == 5
                     && threeLocation == 3) {
-                gameState = 34;
+                gameState = 34; //
             }
         } else if (round == 7) {
             if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 7
@@ -811,9 +814,29 @@ public class Board {
             } else if (aLocation == 5 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 3
                     && threeLocation == 8) {
                 gameState = 14;
-            } else if (aLocation == 5 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 6
-                    && threeLocation == 3) {
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 2
+                    && threeLocation == 8) {
                 gameState = 15;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 4
+                    && threeLocation == 5) {
+                gameState = 16;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 8
+                    && threeLocation == 6) {
+                gameState = 17;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 1 && twoLocation == 5
+                    && threeLocation == 9) {
+                gameState = 18;
+            } else if (aLocation == 5 && bLocation == 4 && cLocation == 6 && oneLocation == 4 && twoLocation == 5
+                    && threeLocation == 5) {
+                gameState = 19;
+            } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 9
+                    && threeLocation == 3) {
+                gameState = 20;
+            }
+        } else if (round == 8) {
+            if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 7
+                    && threeLocation == 3) {
+                gameState = 0;
             }
         }
 
@@ -973,6 +996,15 @@ public class Board {
                         { "true", "false", "false", "true", "true", "false" },
                         { "false", "false", "false", "false", "true", "true" },
                         { "false", "false", "true", "false", "false", "true" },
+                        { "true", "false", "false", "false", "true", "true" },
+                        { "false", "false", "false", "false", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                        { "false", "true", "true", "false", "false", "true" },
+                        { "true", "false", "false", "true", "true", "true" },
+                },
+                {
+
                 }
         };
 
