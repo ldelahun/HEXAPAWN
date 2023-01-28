@@ -24,7 +24,7 @@ public class BotBrain {
         /*
          * This will be the move database that the bot uses
          */
-        int[][][][] BOTMOVESET = {
+        public int[][][][] BOTMOVESET = {
                         { // Bots first turn
                                         { // Gamestates
                                                         { 1, 4, 3, 1 },
@@ -64,10 +64,10 @@ public class BotBrain {
                                                         { 1, 5, 6, 1 },
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
                                                         { 5, 2, 6, 1 },
@@ -79,7 +79,7 @@ public class BotBrain {
                                                         { 1, 6, 6, 1 },
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
                                                         { 4, 6, 3, 1 },
@@ -124,7 +124,7 @@ public class BotBrain {
                                                         { 1, 2, 8, 1 }
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
                                                         { 4, 4, 3, 1 },
@@ -132,10 +132,10 @@ public class BotBrain {
                                                         { 4, 6, 3, 1 }
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
-                                                        { 10, 10, 10, 1 } // Cant do anything
+                                                         // Cant do anything
                                         },
                                         {
                                                         { 4, 5, 3, 1 },
@@ -173,58 +173,58 @@ public class BotBrain {
                                                         { 1, 4, 8, 1 },
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
                                                         { 5, 5, 6, 1 }
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
                                                         { 5, 4, 6, 1 },
                                                         { 5, 2, 9, 1 }
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {},
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
                                                         { 7, 2, 5, 1 },
                                                         { 4, 6, 5, 1 },
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
                                                         { 5, 6, 5, 1 },
@@ -250,20 +250,20 @@ public class BotBrain {
                                         },
                                         {},
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
                                         {
-                                                        { 10, 10, 10, 1 }
+                                                        
                                         },
 
                         },
                         {
-                                {
-                                        { 10, 10, 10, 1 }
-                                }
+                                        {
+                                                        
+                                        }
                         }
         };
 
@@ -295,7 +295,7 @@ public class BotBrain {
          * checking if the move is still in play
          */
         private int checkPlan(int r, int g) {
-                int randPlan;
+                int randPlan = 0;
 
                 ArrayList<Integer> possibleMoves = new ArrayList<Integer>(); // Eat Shit dumbass
 
@@ -303,12 +303,21 @@ public class BotBrain {
                         if (BOTMOVESET[r][g][i][3] == 1) {
 
                                 possibleMoves.add(i);
+                                System.out.println(possibleMoves.get(i));
                         }
                 }
 
                 System.out.println(possibleMoves);
 
-                randPlan = random.nextInt(possibleMoves.size());
+                if(possibleMoves.size() == 0) {
+                        System.out.println("removing latest move: "+pastMove[2]);
+                        
+                        BOTMOVESET[pastMove[0]][pastMove[1]][pastMove[2]][3] = 0;
+                        
+                        Game.winner(true);
+                } else{
+                        randPlan = random.nextInt(possibleMoves.size());     
+                }
 
                 return possibleMoves.get(randPlan);
         }

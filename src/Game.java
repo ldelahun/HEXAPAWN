@@ -1,6 +1,7 @@
 package src;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import java.awt.Graphics;
@@ -16,7 +17,7 @@ public class Game extends JPanel implements MouseListener {
 
     // Game data
     static int wins, loss, round, gameState, playerRound, botRound;
-    boolean playerChose;
+    static boolean playerChose;
 
     Game() {
         // Panel Settings
@@ -127,12 +128,36 @@ public class Game extends JPanel implements MouseListener {
         }
     }
 
+    public static void winner(boolean player) {
+        System.out.println("pogoo");
+        
+        if(player){
+            wins++;
+            
+            JOptionPane.showMessageDialog(null,"You Won The Game", "YOU WON", JOptionPane.PLAIN_MESSAGE);
+        }else{
+            loss++;
+
+            JOptionPane.showMessageDialog(null,"You Lost The Game", "YOU LOSE", JOptionPane.PLAIN_MESSAGE);
+        }
+
+        pawnStart();
+
+        round = 1;
+        playerRound = 0;
+        botRound = 0;
+        playerChose = false;
+
+    }
+    
+
     /*
      * Runs the bot commands
      */
     private void runbot() {
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
                 pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
+        
         bot.setPlan(botRound, gameState);
 
         try {
