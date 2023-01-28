@@ -392,7 +392,7 @@ public class Board {
         try {
             boxPosition = possiblePositions[pRound][boardState][pawn][box];
         } catch (Exception e) {
-            System.out.println("error array is dogshit - " + e);
+            System.out.println("error array is - " + e);
         }
 
         return boxPosition;

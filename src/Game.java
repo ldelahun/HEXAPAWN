@@ -105,6 +105,15 @@ public class Game extends JPanel implements MouseListener {
     }
 
     private void locationChecker(Pawns pawn, int pawnPosition) {
+        if(pawn.boardLocation == pawnPosition) {
+            playerChose = false;
+            pawn.type = pawn.defaultType;
+            box1.toDraw = false;
+            box2.toDraw = false;
+            box3.toDraw = false;
+            repaint();
+        }
+        
         gameState = location.stateChecker(round, pawnA.boardLocation, pawnB.boardLocation, pawnC.boardLocation,
                 pawn1.boardLocation, pawn2.boardLocation, pawn3.boardLocation);
 
@@ -236,6 +245,8 @@ public class Game extends JPanel implements MouseListener {
     // Mouse Events
     @Override
     public void mouseClicked(java.awt.event.MouseEvent mouse) {
+        //repaint();
+
         if (!playerChose) {
             characterSelection(location.checkCords(mouse.getX(), mouse.getY()));
         } else {

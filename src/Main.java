@@ -21,7 +21,7 @@ import javax.swing.plaf.ColorUIResource;
  * This will create the JFrame and will house the side function buttons for the
  * the.
  * 
- * @version EAT MY ASS Oct 2022
+ * @version Oct 2022
  * @author POG MAN
  */
 public class Main {
@@ -91,12 +91,12 @@ public class Main {
         JButton rules = new JButton("RULES");
         rules.setPreferredSize(buttonSizes);
         rules.addActionListener((e) -> displayRules());
-        options.add(rules);
+        //options.add(rules);
 
         JButton botInfo = new JButton("BOT INFO");
         botInfo.setPreferredSize(buttonSizes);
         botInfo.addActionListener((e) -> displayBot());
-        options.add(botInfo);
+        //options.add(botInfo);
 
         JButton winLoss = new JButton("WINS");
         winLoss.setPreferredSize(buttonSizes);
@@ -142,15 +142,17 @@ public class Main {
     }
 
     private static void displayBot() {
-        String text = "Its coming";
+        //String text = "Its coming";
 
-        JOptionPane.showMessageDialog(null, text, "Bot Information", JOptionPane.PLAIN_MESSAGE);
+        //Game.wins = 2;
+
+        //JOptionPane.showMessageDialog(null, text, "Render Board", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void displayWins() {
-        String text = Integer.toString(Game.round);
+        String text = "You have won: "+Game.wins+" And you have lost: "+Game.loss;
 
-        JOptionPane.showMessageDialog(null, text, "Player Wins", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, text, "Player States", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void reset() {
