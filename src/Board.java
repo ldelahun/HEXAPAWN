@@ -362,7 +362,68 @@ public class Board {
 
                 },
                 { // Final player round
-
+                        {}, //
+                        { { 2, 10, 10 },
+                                { 2, 10, 10 },
+                                { 2, 10, 10 }, },
+                        {
+                                { 2, 10, 10 },
+                                { 2, 10, 10 },
+                                { 2, 10, 10 },
+                        },
+                        {
+                                
+                        }, //
+                        {
+                                
+                        }, //
+                        {
+                                
+                        }, //
+                        {
+                        }, //
+                        {
+                                
+                        }, //
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {
+                                
+                        }, //
+                        {
+                                
+                        }, //
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {
+                                
+                        }, //
+                        {
+                                
+                        }, //
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {
+                                
+                        }, //
+                        {
+                            
+                        }, //
+                        {{ 2, 10, 10 },
+                        { 2, 10, 10 },
+                        { 2, 10, 10 },},
+                        {
+                                
+                        }, //
                 }
 
         };
@@ -771,7 +832,7 @@ public class Board {
         } else if (round == 7) {
             if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 7
                     && threeLocation == 3) {
-                gameState = 0;
+                gameState = 0; //
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 4
                     && threeLocation == 5) {
                 gameState = 1;
@@ -831,13 +892,12 @@ public class Board {
                 gameState = 19;
             } else if (aLocation == 4 && bLocation == 5 && cLocation == 6 && oneLocation == 5 && twoLocation == 9
                     && threeLocation == 3) {
-                gameState = 20;
+                gameState = 20; //
             }
         } else if (round == 8) {
-            if (aLocation == 4 && bLocation == 5 && cLocation == 5 && oneLocation == 5 && twoLocation == 7
-                    && threeLocation == 3) {
+            if (true) {
                 gameState = 0;
-            }
+            } 
         }
 
         return gameState;
@@ -1004,7 +1064,7 @@ public class Board {
                         { "true", "false", "false", "true", "true", "true" },
                 },
                 {
-
+                        { "true", "true", "true", "true", "true", "true" },
                 }
         };
 
