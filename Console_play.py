@@ -4,6 +4,7 @@ Mainly used to test out features of the game
 before working on the GUI version
 """
 import sys
+import Play_game
 
 
 def main():
@@ -17,8 +18,10 @@ def main():
     else:
         board_size = int(args[0])
 
+    # Generates game instance
+    board, pieces = Play_game.start_game(board_size)  # Creates a board and piece objects
 
-    
+    print(pieces)
 
 
 if __name__ == '__main__':
